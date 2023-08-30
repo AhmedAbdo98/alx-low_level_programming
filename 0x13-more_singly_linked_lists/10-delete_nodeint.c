@@ -20,7 +20,7 @@ if (index == 0)
 free(tmp);
 return (1);
 }
-while (i < index - 1)
+while (x < index - 1)
 {
 if (!tmp || !(tmp->next))
 return (-1);
@@ -32,4 +32,3 @@ tmp->next = crrnt->next;
 free(crrnt);
 return (1);
 }
-
