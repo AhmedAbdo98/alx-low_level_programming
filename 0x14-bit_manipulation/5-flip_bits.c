@@ -18,3 +18,5 @@ curr = ex >> x;
 if (curr & 1)
 c++;
 }
+return (c);
+}
