@@ -24,10 +24,10 @@ void close_elf(int elf);
  */
 void check_elf(unsigned char *e_ident)
 {
-int indx;
-for (indx = 0; indx < 4; indx++)
+int index;
+for (index = 0; index < 4; index++)
 {
-if (e_ident[indx] != 127 &&    e_ident[indx] != 'E' &&    e_ident[indx] != 'L' &&    e_ident[indx] != 'F')
+if (e_ident[index] != 127 && e_ident[index] != 'E' && e_ident[index] != 'L' && e_ident[index] != 'F')
 {
 dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 exit(98);
@@ -42,15 +42,15 @@ exit(98);
  */
 void print_magic(unsigned char *e_ident)
 {
-int indx;
+int index;
 
 printf(" Magic: ");
 
-for (indx = 0; indx < EI_NIDENT; indx++)
+for (indx = 0; index < EI_NIDENT; index++)
 {
-printf("%02x", e_ident[indx]);
+printf("%02x", e_ident[index]);
 
-if (indx == EI_NIDENT - 1)
+if (index == EI_NIDENT - 1)
 printf("\n");
 else
 printf(" ");
@@ -234,11 +234,11 @@ printf("%#lx\n", e_entry);
  * @elf: The file dscrptr of the ELF file
  * Description: If the file cannot closed - exit code 98.
  */
-void close_elf(int elf)
+void close_elf(int lf)
 {
-if (close(elf) == -1)
+if (close(lf) == -1)
 {
-dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", elf);
+dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", lf);
 exit(98);
 }
 }
