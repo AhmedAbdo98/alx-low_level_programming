@@ -46,7 +46,7 @@ int index;
 
 printf(" Magic: ");
 
-for (indx = 0; index < EI_NIDENT; index++)
+for (index = 0; index < EI_NIDENT; index++)
 {
 printf("%02x", e_ident[index]);
 
@@ -234,11 +234,11 @@ printf("%#lx\n", e_entry);
  * @elf: The file dscrptr of the ELF file
  * Description: If the file cannot closed - exit code 98.
  */
-void close_elf(int lf)
+void close_elf(int elf)
 {
-if (close(lf) == -1)
+if (close(elf) == -1)
 {
-dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", lf);
+dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", elf);
 exit(98);
 }
 }
