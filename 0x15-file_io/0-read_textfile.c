@@ -19,7 +19,7 @@ if (f == -1)
 return (0);
 buff = malloc(sizeof(char) * letters);
 y = read(f, buff, letters);
-x = write(STDOUT_FILENO, buf, y);
+x = write(STDOUT_FILENO, buff, y);
 free(buff);
 close(f);
 return (x);

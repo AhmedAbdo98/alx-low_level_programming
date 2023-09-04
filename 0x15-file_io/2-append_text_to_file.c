@@ -18,7 +18,7 @@ if (text_content != NULL)
 for (ln = 0; text_content[ln];)
 ln++;
 }
-x = open(filename, o_WRONLY | o_APPEND);
+x = open(filename, O_WRONLY | O_APPEND);
 y = write(x, text_content, ln);
 if (x == -1 || y == -1)
 return (-1);
